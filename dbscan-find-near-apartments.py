@@ -134,7 +134,7 @@ for i in range(count) :
 dbscan_df=danji_apt_dbscan[['x_meter', 'y_meter']]
 dbscan_df=dbscan_df.rename(columns={'x_meter' : 'x', 'y_meter' : 'y'})
 
-dbscan=DBSCAN(min_samples=2, eps=300) # 350m 이내면 하나의 군집으로 묶음
+dbscan=DBSCAN(min_samples=2, eps=300) # 300m 이내면 하나의 군집으로 묶음, 최소 군집 개수는 2개
 clusters=dbscan.fit_predict(dbscan_df) # -1은 잡음(군집되지 않은 점)
 
 print(f'category : {clusters}')
